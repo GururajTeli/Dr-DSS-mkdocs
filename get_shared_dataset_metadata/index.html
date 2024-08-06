@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Get Shared Dataset Metadata - Dr DSS Metadata Code Library Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Get Shared Dataset Metadata";
+        var mkdocs_page_input_path = "get_shared_dataset_metadata.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Dr DSS Metadata Code Library Documentation
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../dss_connection_handler/">DSS Connection Handler</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_dataset_metadata/">Get Dataset Metadata</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_flowzone_metadata/">Get Flowzone Metadata</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_notebook_metadata/">Get Notebook Metadata</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_project_metadata/">Get Project Metadata</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_recipe_metadata/">Get Recipe Metadata</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_scenario_metadata/">Get Scenario Metadata</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Get Shared Dataset Metadata</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#dss_metadata_utils.get_shared_dataset_metadata">get_shared_dataset_metadata</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dss_metadata_utils.get_shared_dataset_metadata.fetch_shared_dataset_details">fetch_shared_dataset_details</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Dr DSS Metadata Code Library Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Get Shared Dataset Metadata</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="shared-dataset-metadata-code">Shared Dataset Metadata Code</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="dss_metadata_utils.get_shared_dataset_metadata"></a>
+    <div class="doc doc-contents first">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="dss_metadata_utils.get_shared_dataset_metadata.fetch_shared_dataset_details" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">fetch_shared_dataset_details</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">final_list</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Fetches the shared dataset metadata from the DSS instance.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>client</code></b>
+                  (<code><span title="dataikuapi.dssclient.DSSClient">DSSClient</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>The DSS client instance.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>instance</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the DSS instance.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>final_list</code></b>
+                  (<code>list</code>)
+              –
+              <div class="doc-md-description">
+                <p>List to store the final results.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              –
+              <div class="doc-md-description">
+                <p>None</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            <details class="quote">
+              <summary>Source code in <code>dss_metadata_utils\get_shared_dataset_metadata.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fetch_shared_dataset_details</span><span class="p">(</span><span class="n">client</span><span class="p">,</span><span class="n">instance</span><span class="p">,</span><span class="n">final_list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fetches the shared dataset metadata from the DSS instance.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        client (DSSClient): The DSS client instance.</span>
+<span class="sd">        instance (str): The name of the DSS instance.</span>
+<span class="sd">        final_list (list): List to store the final results.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">dss_projects</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">list_project_keys</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">dss_projects</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">project_obj</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_project</span><span class="p">(</span><span class="n">project</span><span class="p">)</span>
+            <span class="n">raw_settings</span> <span class="o">=</span> <span class="n">project_obj</span><span class="o">.</span><span class="n">get_settings</span><span class="p">()</span><span class="o">.</span><span class="n">get_raw</span><span class="p">()</span>
+
+            <span class="c1"># Get the list of shared datasets in a project</span>
+            <span class="k">for</span> <span class="n">exposed_obj</span> <span class="ow">in</span> <span class="n">raw_settings</span><span class="p">[</span><span class="s2">&quot;exposedObjects&quot;</span><span class="p">][</span><span class="s2">&quot;objects&quot;</span><span class="p">]:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">connection</span> <span class="o">=</span> <span class="n">project_obj</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">exposed_obj</span><span class="p">[</span><span class="s2">&quot;localName&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">get_definition</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;params&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">)</span>
+
+                    <span class="c1"># For each shared dataset, get the target project</span>
+                    <span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">exposed_obj</span><span class="p">[</span><span class="s2">&quot;rules&quot;</span><span class="p">]:</span>
+                        <span class="n">target_project</span> <span class="o">=</span> <span class="n">rule</span><span class="p">[</span><span class="s2">&quot;targetProject&quot;</span><span class="p">]</span>
+
+                        <span class="c1"># Format and append the required information</span>
+                        <span class="n">final_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;DSS_INSTANCE&#39;</span> <span class="p">:</span> <span class="n">instance</span><span class="p">,</span>
+                                         <span class="s1">&#39;PROJECT_KEY&#39;</span><span class="p">:</span> <span class="n">project</span><span class="p">,</span>
+                                         <span class="s1">&#39;SHARED_DATASET&#39;</span><span class="p">:</span><span class="n">exposed_obj</span><span class="p">[</span><span class="s2">&quot;localName&quot;</span><span class="p">],</span>
+                                         <span class="s1">&#39;DATASET_CONNECTION&#39;</span><span class="p">:</span> <span class="n">connection</span><span class="p">,</span>
+                                         <span class="s1">&#39;TARGET_PROJECT&#39;</span><span class="p">:</span> <span class="n">target_project</span>
+                                        <span class="p">})</span>
+                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;EXCEPTION = </span><span class="si">{}</span><span class="s2"> from project </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">),</span><span class="nb">str</span><span class="p">(</span><span class="n">project</span><span class="p">)))</span>
+                    <span class="k">continue</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../get_scenario_metadata/" class="btn btn-neutral float-left" title="Get Scenario Metadata"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../get_scenario_metadata/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

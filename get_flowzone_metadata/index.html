@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Get Flowzone Metadata - Dr DSS Metadata Code Library Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Get Flowzone Metadata";
+        var mkdocs_page_input_path = "get_flowzone_metadata.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Dr DSS Metadata Code Library Documentation
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../dss_connection_handler/">DSS Connection Handler</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_dataset_metadata/">Get Dataset Metadata</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Get Flowzone Metadata</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#dss_metadata_utils.get_flowzone_metadata">get_flowzone_metadata</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dss_metadata_utils.get_flowzone_metadata.fetch_flowzone_details">fetch_flowzone_details</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_notebook_metadata/">Get Notebook Metadata</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_project_metadata/">Get Project Metadata</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_recipe_metadata/">Get Recipe Metadata</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_scenario_metadata/">Get Scenario Metadata</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_shared_dataset_metadata/">Get Shared Dataset Metadata</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Dr DSS Metadata Code Library Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Get Flowzone Metadata</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="flowzone-metadata-code">Flowzone Metadata Code</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="dss_metadata_utils.get_flowzone_metadata"></a>
+    <div class="doc doc-contents first">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="dss_metadata_utils.get_flowzone_metadata.fetch_flowzone_details" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">fetch_flowzone_details</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">project_key</span><span class="p">,</span> <span class="n">engagement_type</span><span class="p">,</span> <span class="n">final_list</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Fetches the flowzone metadata from the DSS instance.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>client</code></b>
+                  (<code><span title="dataikuapi.dssclient.DSSClient">DSSClient</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>The DSS client instance.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>instance</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the DSS instance.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>project_key</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The key of the project in DSS.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>engagement_type</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The type of engagement for the project.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>final_list</code></b>
+                  (<code>list</code>)
+              –
+              <div class="doc-md-description">
+                <p>List to store the final results.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              –
+              <div class="doc-md-description">
+                <p>None</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            <details class="quote">
+              <summary>Source code in <code>dss_metadata_utils\get_flowzone_metadata.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fetch_flowzone_details</span><span class="p">(</span><span class="n">client</span><span class="p">,</span><span class="n">instance</span><span class="p">,</span><span class="n">project_key</span><span class="p">,</span><span class="n">engagement_type</span><span class="p">,</span><span class="n">final_list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fetches the flowzone metadata from the DSS instance.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        client (DSSClient): The DSS client instance.</span>
+<span class="sd">        instance (str): The name of the DSS instance.</span>
+<span class="sd">        project_key (str): The key of the project in DSS.</span>
+<span class="sd">        engagement_type (str): The type of engagement for the project.</span>
+<span class="sd">        final_list (list): List to store the final results.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span> <span class="p">:</span>
+        <span class="n">project</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_project</span><span class="p">(</span><span class="n">project_key</span><span class="p">)</span>  <span class="c1"># Project Object</span>
+        <span class="n">zones_id</span> <span class="o">=</span> <span class="p">[</span><span class="n">zone</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">zone</span> <span class="ow">in</span> <span class="n">project</span><span class="o">.</span><span class="n">get_flow</span><span class="p">()</span><span class="o">.</span><span class="n">list_zones</span><span class="p">()]</span>  <span class="c1"># Zones Metadata in the form of json</span>
+        <span class="n">datasets</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">list_datasets</span><span class="p">()</span>  <span class="c1"># Extracting list of datasets in the project</span>
+        <span class="n">no_flowzones</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">zones_id</span><span class="p">)</span>  <span class="c1"># Extracting count of flowzones present in the project</span>
+
+        <span class="n">zone_counts</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">datasets</span><span class="p">:</span> <span class="c1"># Iterating through the datasets metadata</span>
+            <span class="n">dataset_object</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># Extracting dataset name</span>
+            <span class="n">zone</span> <span class="o">=</span> <span class="n">dataset_object</span><span class="o">.</span><span class="n">get_zone</span><span class="p">()</span>  <span class="c1">#C hecking for which zone id the dataset belongs to</span>
+            <span class="n">zone_name</span> <span class="o">=</span> <span class="n">zone</span><span class="o">.</span><span class="n">name</span>  <span class="c1"># Extracting the zone name from the zone id</span>
+            <span class="c1"># Storing in the dictionary </span>
+            <span class="k">if</span> <span class="n">zone_name</span> <span class="ow">in</span> <span class="n">zone_counts</span> <span class="p">:</span>
+                <span class="n">zone_counts</span><span class="p">[</span><span class="n">zone_name</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span> <span class="p">:</span>
+                <span class="n">zone_counts</span><span class="p">[</span><span class="n">zone_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">for</span> <span class="n">zoneid</span> <span class="ow">in</span> <span class="n">zones_id</span><span class="p">:</span>  <span class="c1"># Iterating through the flowzone metadata</span>
+            <span class="n">flow_object</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">get_flow</span><span class="p">()</span><span class="o">.</span><span class="n">get_zone</span><span class="p">(</span><span class="n">zoneid</span><span class="p">)</span>
+            <span class="n">jsonfile</span> <span class="o">=</span> <span class="n">flow_object</span><span class="o">.</span><span class="n">get_settings</span><span class="p">()</span><span class="o">.</span><span class="n">get_raw</span><span class="p">()</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">flow_object</span><span class="o">.</span><span class="n">get_settings</span><span class="p">()</span><span class="o">.</span><span class="n">get_raw</span><span class="p">()[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>  <span class="c1"># Name of the flowzone</span>
+            <span class="n">tags</span> <span class="o">=</span> <span class="n">flow_object</span><span class="o">.</span><span class="n">get_settings</span><span class="p">()</span><span class="o">.</span><span class="n">get_raw</span><span class="p">()[</span><span class="s2">&quot;tags&quot;</span><span class="p">]</span>  <span class="c1"># Tags of the flowzone</span>
+
+            <span class="n">final_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                    <span class="s1">&#39;DSS_INSTANCE&#39;</span><span class="p">:</span><span class="n">instance</span><span class="p">,</span>
+                    <span class="s1">&#39;PROJECT_NAME&#39;</span><span class="p">:</span><span class="n">project_key</span><span class="p">,</span>
+                    <span class="s1">&#39;ENGAGEMENT_TYPE&#39;</span><span class="p">:</span><span class="n">engagement_type</span><span class="p">,</span>
+                    <span class="s1">&#39;FLOWZONE_COUNT&#39;</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">zones_id</span><span class="p">),</span>
+                    <span class="s1">&#39;FLOWZONE_NAME&#39;</span><span class="p">:</span><span class="n">name</span><span class="p">,</span>
+                    <span class="s1">&#39;FLOWZONE_TAGS&#39;</span><span class="p">:</span><span class="n">tags</span><span class="p">,</span>
+                    <span class="c1"># Extracting the description of the flowzone</span>
+                    <span class="s1">&#39;FLOWZONE_DESC&#39;</span><span class="p">:(</span><span class="n">flow_object</span><span class="o">.</span><span class="n">get_settings</span><span class="p">()</span><span class="o">.</span><span class="n">get_raw</span><span class="p">()[</span><span class="s2">&quot;description&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="s2">&quot;description&quot;</span> <span class="ow">in</span> <span class="n">jsonfile</span> <span class="k">else</span> <span class="s2">&quot; &quot;</span><span class="p">),</span>
+                    <span class="c1"># Extracting the short description of the flowzone</span>
+                    <span class="s1">&#39;FLOWZONE_SHORTDESC&#39;</span><span class="p">:(</span><span class="n">flow_object</span><span class="o">.</span><span class="n">get_settings</span><span class="p">()</span><span class="o">.</span><span class="n">get_raw</span><span class="p">()[</span><span class="s2">&quot;shortDesc&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="s2">&quot;shortDesc&quot;</span> <span class="ow">in</span> <span class="n">jsonfile</span> <span class="k">else</span> <span class="s2">&quot; &quot;</span><span class="p">),</span>  
+                    <span class="s1">&#39;DATASET_COUNT&#39;</span> <span class="p">:(</span><span class="n">zone_counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">zone_counts</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Dataet count in flowzone</span>
+                <span class="p">})</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;EXCEPTION = </span><span class="si">{}</span><span class="s2"> from project </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">),</span><span class="nb">str</span><span class="p">(</span><span class="n">project_key</span><span class="p">)))</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../get_dataset_metadata/" class="btn btn-neutral float-left" title="Get Dataset Metadata"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../get_notebook_metadata/" class="btn btn-neutral float-right" title="Get Notebook Metadata">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../get_dataset_metadata/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../get_notebook_metadata/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
